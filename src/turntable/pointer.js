@@ -17,7 +17,7 @@ var Pointer = function(){
    */
   function createPointer(){
     let container = new createjs.Container();
-    let image = global.Preload.getResult('pointer');
+    let image = window.Preload.getResult('pointer');
     let bitmap = new createjs.Bitmap(image);
     bitmap.x = X;
     bitmap.y = Y;

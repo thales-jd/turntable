@@ -9,15 +9,76 @@ function resLoading(e){
 function resLoaded(e) {
   __game.launch();
   let arr = [
-    {"activityInfoId":"10061811280003","itemCode":"10061543807566335","itemName":"拍币","itemType":2,"itemDesc":"20","itemPic":"jfs/t1/6/4/4161/1091/5c04f123E04aedfad/808d86861e09d94e.jpg","awardNum":20},
-    {"activityInfoId":"10061811280003","itemCode":"10061543807566357","itemName":"商品2","itemType":0,"itemDesc":"电脑","itemPic":"jfs/t1/6/28/4240/1092/5c04f14bE34eae862/808d86861e09d94e.jpg","awardNum":1},
-    {"activityInfoId":"10061811280003","itemCode":"10061543807480100","itemName":"拍币","itemType":2,"itemDesc":"10","itemPic":"jfs/t1/10/20/4186/1091/5c04f17bEdbba3d49/662b2cdfe4f23f69.jpg","awardNum":10},
-    {"activityInfoId":"10061811280003","itemCode":"10061543588326659","itemName":"优惠券","itemType":1,"itemDesc":"满99减1","itemPic":"jfs/t1/8/12/4231/11944/5c04f1c0E479a47b8/da533166b9322cb0.jpg","awardNum":1},
-    {"activityInfoId":"10061811280003","itemCode":"10061543588141685","itemName":"京豆","itemType":3,"itemDesc":"2","itemPic":"jfs/t1/5/2/4223/1093/5c04f1dcE3742d3e4/3577d2b8502edf87.jpg","awardNum":2},
-    {"activityInfoId":"10061811280003","itemCode":"10061543587680281","itemName":"拍币","itemType":2,"itemDesc":"5","itemPic":"jfs/t1/5/16/4205/1091/5c04f1edEb7bac05d/3577d2b8502edf87.jpg","awardNum":5},
-    {"activityInfoId":"10061811280003","itemCode":"10061543563404751","itemName":"商品","itemType":0,"itemDesc":"饮水机","itemPic":"jfs/t1/5/35/4221/1092/5c04f1f8E3fdbccad/3577d2b8502edf87.jpg","awardNum":1},
-    {"activityInfoId":"10061811280003","itemCode":"10061543563404751","itemName":"没中奖","itemType":0,"itemDesc":"饮水机","itemPic":"jfs/t1/5/35/4221/1092/5c04f1f8E3fdbccad/3577d2b8502edf87.jpg","awardNum":1}
+    {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622454",
+      "itemName": "4999元",
+      "itemType": 0,
+      "itemDesc": "锦鲤礼包",
+      "itemPic": "jfs/t1/19895/12/2013/1220/5c186167Efdd5149b/a6a5456d126496d6.jpg",
+      "awardNum": 1
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622467",
+      "itemName": "500",
+      "itemType": 2,
+      "itemDesc": "拍币",
+      "itemPic": "jfs/t1/29188/15/1959/1236/5c186177E5227777e/c8ec812b8eafa13a.jpg",
+      "awardNum": 500
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622472",
+      "itemName": "50",
+      "itemType": 2,
+      "itemDesc": "拍币",
+      "itemPic": "jfs/t1/12243/28/2002/995/5c186184E31f7007b/1250caf4bde959d6.jpg",
+      "awardNum": 50
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622476",
+      "itemName": "100",
+      "itemType": 3,
+      "itemDesc": "京豆",
+      "itemPic": "jfs/t1/14290/17/1967/1250/5c186191E059bbdae/a40e017fd4345213.jpg",
+      "awardNum": 100
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622480",
+      "itemName": "50",
+      "itemType": 3,
+      "itemDesc": "京豆",
+      "itemPic": "jfs/t1/16465/39/1972/1104/5c18619cE867014b4/8e489e1789320d9e.jpg",
+      "awardNum": 50
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622484",
+      "itemName": "10",
+      "itemType": 3,
+      "itemDesc": "京豆",
+      "itemPic": "jfs/t1/15449/10/1999/1250/5c1861a6E4967698c/d82af716cabd082f.jpg",
+      "awardNum": 10
+    }, {
+      "activityInfoId": "10061812170267",
+      "itemCode": "10061545023622489",
+      "itemName": "10元",
+      "itemType": 1,
+      "itemDesc": "优惠券",
+      "itemPic": "jfs/t1/6429/27/9888/1073/5c1861b2E9365808f/17d956ae160be379.jpg",
+      "awardNum": 1
+    },
+    {
+      "activityInfoId":"10061811280003",
+      "itemCode":"10061543563404751",
+      "itemName":"没中奖",
+      "itemType":0,
+      "itemDesc":"没中奖",
+      "itemPic":"jfs/t1/5/35/4221/1092/5c04f1f8E3fdbccad/3577d2b8502edf87.jpg",
+      "awardNum":1
+    }
   ];
+  arr.forEach(o => {
+    o.itemPic = `http://img11.360buyimg.com/test/s50x50_${o.itemPic}`;
+  })
   __game.award(arr);
   
 }

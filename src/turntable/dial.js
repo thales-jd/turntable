@@ -1,14 +1,13 @@
 import 'latest-createjs';
+import Sector from './sector';
 /**
  *	转盘
  *	@param	prop	参数
  */
 var Dial = function(){
 	var _this = this;
-  const RADIUS = 287,	//半径
-    RING_SIZE = 8,  //圆环尺寸
+  const RING_SIZE = 8,  //圆环尺寸
     RING_RADIUS = 296,  //圆环半径
-    DELAY = 1000,	//间隔
 		DURATION = 5000;	//自转周期
   var _tween = null;
   let _corect = -22.5;
@@ -26,8 +25,8 @@ var Dial = function(){
     _awardConfig = prop;
     const unit = Math.PI*2 / prop.length;
     prop.forEach((v, i) => {
-      let color = i%2==0?"#FFBAD7":'#FFFFFF';
-      let award = createAwardSingle(v, color, RADIUS, unit);
+      let award = new Sector(v, i, unit);
+      //let award = createAwardSingle(v, color,RADIUS, unit);
       award.rotation = i * 360/prop.length;
       __award.addChild(award);
     });
@@ -42,28 +41,8 @@ var Dial = function(){
     createjs.Tween.get(__entity).to({rotation:360*5 - degree}, DURATION, createjs.Ease.sineInOut).call(()=>{__entity.rotation = -degree});
   }
   /**
-   * 绘制单个奖励
-   * @param {Object} obj 奖品参数
-   * @param {String} color 颜色
-   * @param {int} radius 扇形半径
-   * @param {radians} radians 扇形弧度
+   * 创建圆环
    */
-  function createAwardSingle(obj, color, radius, radians){
-    let container = new createjs.Container();
-    let shape = new createjs.Shape();
-    shape.graphics
-      .beginFill(color)
-      .moveTo(0,0)
-      .arc(0,0, radius, -Math.PI/2-radians/2,-Math.PI/2+radians/2)
-      .lineTo(0,0)
-      .endFill();
-    let text = new createjs.Text(obj.itemName, "40px Arial", "#000000");
-    text.textAlign = "center";
-    //text.x = 50;
-    text.y = -radius * 3/4;
-    container.addChild(shape, text);
-    return container;
-  }
   function createRing() {
     let container = new createjs.Container();
     let s = new createjs.Shape();

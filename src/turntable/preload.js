@@ -3,10 +3,8 @@ let _images = [];
 var imgContext = require.context("./res/images/", true, /^.*\.(png|jpg|gif)$/);
 const imgPattern = /\/(\w*)\.(png|jpg|gif)$/;
 imgContext.keys().map(imgContext).forEach((src) => {
-  console.log(src);
   let o = {};
   let arr = src.match(imgPattern);
-  console.log(arr);
   let name = arr[1];
   o.id = name;
   o.src = src;

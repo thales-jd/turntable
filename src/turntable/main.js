@@ -2,6 +2,8 @@ import 'latest-createjs';
 import Dial from './dial';
 import Pointer from './pointer'
 import Disc from './disc';
+import './style.css';
+
 const VER = "1.0";
 const EVENT = {};
 
